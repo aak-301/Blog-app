@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
@@ -12,7 +12,7 @@ const Layout = () => {
   return (
     <>
       <Navbar />
-      <Home />
+      <Outlet />
       <Footer />
     </>
   );
