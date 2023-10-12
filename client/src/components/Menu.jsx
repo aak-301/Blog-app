@@ -1,7 +1,5 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/authContext";
+import React, { useEffect, useState } from "react";
 
 // const posts = [
 //   {
@@ -32,14 +30,12 @@ import { AuthContext } from "../context/authContext";
 
 function Menu({ cat }) {
   const [posts, setPosts] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/posts/cat=${cat}`);
+        const res = await axios.get(`/posts/?cat=${cat}`);
         setPosts(res.data);
-        console.log(res.data);
       } catch (err) {
         console.log(err);
       }
