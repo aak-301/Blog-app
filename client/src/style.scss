@@ -73,6 +73,11 @@ body {
         justify-content: space-between;
         .logo {
           width: 120px;
+
+          img{
+            height: 170px;
+
+          }
         }
         .links {
           display: flex;
