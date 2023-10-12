@@ -33,7 +33,7 @@ function Menu() {
       <h1>Other posts yo may like</h1>
       {posts.map((post) => (
         <div className="post" key={post.id}>
-          <img src={post.img} alt="" srcset="" />
+          <img src={post.img} alt="" />
           <h2>{post.title}</h2>
           <button>Read More</button>
         </div>
