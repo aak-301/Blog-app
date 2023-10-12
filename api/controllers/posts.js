@@ -43,6 +43,7 @@ export const addPost = (req, res) => {
       req.body.date,
     ];
     db.query(q, [values], (err, data) => {
+      console.log(err);
       if (err) return res.status(500).json(err);
 
       return res.json("Post has been created");
