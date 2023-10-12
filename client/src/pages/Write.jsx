@@ -7,6 +7,7 @@ import moment from "moment";
 
 function Write() {
   const state = useLocation().state;
+  const navigate = useNavigate();
 
   const [title, setTitle] = useState(state?.title || "");
   const [value, setValue] = useState(state?.desc || "");
@@ -15,7 +16,6 @@ function Write() {
   const [cat, setCat] = useState(state?.cat || "");
 
   const handleClick = async (e) => {
-    const navigate = useNavigate();
     e.preventDefault();
     try {
       if (file) {
