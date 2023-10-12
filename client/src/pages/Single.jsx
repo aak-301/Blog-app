@@ -6,6 +6,7 @@ import Menu from "../components/Menu";
 import axios from "axios";
 import moment from "moment";
 import { AuthContext } from "../context/authContext";
+import DOMPurify from "dompurify";
 
 function Single() {
   const [post, setPost] = useState({});
@@ -50,7 +51,7 @@ function Single() {
           {currentUser.username === post.username && (
             <div>
               <div className="edit">
-                <Link className="link" to={`/write?edit=2`}>
+                <Link className="link" to={`/write?edit=2`} state={post}>
                   <img src={Edit} alt="" />
                 </Link>
               </div>
@@ -61,7 +62,11 @@ function Single() {
           )}
         </div>
         <h1>{post.title}</h1>
-        {post.desc}
+        <p
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(post.desc),
+          }}
+        ></p>
       </div>
       <Menu cat={post.cat} />
     </div>
