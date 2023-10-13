@@ -17,8 +17,11 @@ function Write() {
 
   const handleClick = async (e) => {
     e.preventDefault();
+    console.log("file: ", file);
+    let imgUrl = img;
     try {
       if (file) {
+        console.log("file: ", file);
         const formtData = new FormData();
         formtData.append("file", file);
         formtData.append("upload_preset", "n4pqhtj8");
@@ -26,7 +29,7 @@ function Write() {
           "https://api.cloudinary.com/v1_1/de2pn5bzp/image/upload",
           formtData
         );
-        setImg(res.data.secure_url);
+        imgUrl = res.data.secure_url;
       }
 
       state
@@ -34,13 +37,13 @@ function Write() {
             title,
             desc: value,
             cat,
-            img: img ? img : "",
+            img: imgUrl ? imgUrl : "",
           })
         : await axios.post(`/posts`, {
             title,
             desc: value,
             cat,
-            img: img ? img : "",
+            img: imgUrl ? imgUrl : "",
             date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
           });
       navigate("/");
