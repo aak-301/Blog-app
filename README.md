@@ -3,6 +3,7 @@
 Application where any one can blog abou what they like. 
 
 ## Demo
+![ezgif com-optimize](https://github.com/aak-301/Blog-app/assets/76422079/65169d1d-9c71-4f35-a96a-8e978fa9ec43)
 
 ## Tech-Stack
 1. React.js - Font-end
