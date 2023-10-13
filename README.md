@@ -25,3 +25,4 @@ I build this aproject to learn how we can apply all the stuffs together. It incl
 2. CRUD opeartion on Posts
 3. Image uploads
 4. Category wise blogging
+5. Related Posts
